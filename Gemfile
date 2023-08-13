@@ -48,6 +48,9 @@ gem "bootsnap", require: false
 # Use dartsass in css building  https://github.com/rails/dartsass-rails/tree/main
 gem "dartsass-rails"
 
+# Bootstrap 5 
+gem 'bootstrap'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
