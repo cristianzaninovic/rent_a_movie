@@ -1,0 +1,53 @@
+// Font family
+$primary-font      : "Roboto", "Open Sans", sans-serif;
+// $secondary-font    : "Roboto Slab", "Raleway", "Open Sans", serif;
+
+
+// Color Variables
+$accent-color      : #ffaa3c;
+$primary-color     : $accent-color;
+$secondary-color   : #ebebeb;
+
+$body-color        : #84878d;
+
+$bg-color: #131a20;
+
+body {
+	background-color: $bg-color;
+	// background-image: url(dummy/background.jpg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	color       : $body-color;
+	font-family : $primary-font;
+	font-size   : 1em;
+	font-weight : 400;
+	line-height : normal;
+  padding-bottom: 66.67%; /* = ( 4000 / 6000 ) x 100 */
+  background-image: url('Background.jpg');
+  background-size: cover;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight : 700;
+	margin      : 0 0 20px;
+}
+
+hr{ 
+	border: none;
+	border-bottom: 1px solid #777;
+}
+
+ul, ol {
+	margin: 0;
+	padding-left: 0;
+}
+
+a { 
+	text-decoration: none;
+	color: $accent-color;
+}
+
+address { font-style: normal }
+
+p{ margin-top: 0 }
+

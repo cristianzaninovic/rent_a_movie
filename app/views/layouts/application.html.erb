@@ -11,6 +11,77 @@
   </head>
 
   <body>
+    <header class="site-header">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Navbar brand -->          
+          <a class="navbar-brand" href="#"><%= image_tag 'logo.png', :class=>"me-2", :height=>"20", :alt=>"Logo", :loading=>"lazy"%>
+            <small>Rent a Movie</small>
+          </a>
+
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left links -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Clients</a>
+              </li>
+              <!-- Navbar dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <!-- Dropdown menu -->
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">New Client</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">New Movie</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Available movies</a>
+                  </li>
+                </ul>
+              </li>              
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->      
+    </header>
     <%= yield %>
   </body>
 </html>
