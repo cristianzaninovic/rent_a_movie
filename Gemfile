@@ -57,6 +57,9 @@ gem 'jquery-rails'
 # Use jquery-ui for pretty UI
 gem 'jquery-ui-rails'
 
+# Gem Faker If you get a uninitialized constant Faker::[some_class] error, your version of the gem is behind main.
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
