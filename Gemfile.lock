@@ -195,6 +195,8 @@ GEM
     reline (0.3.7)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rondo_form (0.2.3)
+      railties (>= 6.0)
     rubyzip (2.3.2)
     sass-embedded (1.64.2-x86_64-linux-gnu)
       google-protobuf (~> 3.23)
@@ -210,6 +212,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_form (5.2.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -262,7 +267,9 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.7)
+  rondo_form (~> 0.2.3)
   selenium-webdriver
+  simple_form
   sprockets-rails
   stimulus-rails
   turbo-rails

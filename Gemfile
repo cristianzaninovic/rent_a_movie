@@ -60,6 +60,12 @@ gem 'jquery-ui-rails'
 # Gem Faker If you get a uninitialized constant Faker::[some_class] error, your version of the gem is behind main.
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
+# Forms https://github.com/heartcombo/simple_form#simple-fields-for
+gem 'simple_form'
+
+# dynamic nested forms with Stimulus JS https://github.com/hungle00/rondo_form
+gem 'rondo_form', '~> 0.2.3'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
