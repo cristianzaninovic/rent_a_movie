@@ -6,7 +6,9 @@
       <p class="card-text"><strong>Synopsis:</strong><%= movie.synopsis %></p>
       <p class="card-text"><strong>Director:</strong><%= movie.director %></p>
       <p class="card-text"><strong>Year:</strong><%= movie.year %></p>
-      <%= link_to "Show this movie", movie, class: "btn btn-secondary" %>
+      <p class="card-text"><strong>Clientes:</strong><%= movie.clients.count %></p>
+      <%= link_to "Show", movie, class: "btn btn-info" %>
+      <%= link_to "Edit", edit_movie_path(movie), class: "btn btn-warning" %>
     </div>
   </div>
 </div> 

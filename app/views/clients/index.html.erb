@@ -2,13 +2,22 @@
 
 <h1>Clients</h1>
 
-<div id="clients">
-  <% @clients.each do |client| %>
-    <%= render client %>
-    <p>
-      <%= link_to "Show this client", client %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "New client", new_client_path, class:"btn btn-primary" %>
 
-<%= link_to "New client", new_client_path %>
+<div id="clients" class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>email</th>
+        <th>Movies</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>      
+      <% @clients.each do |client| %>      
+        <%= render partial:'client_row', locals:{ client: client} %>
+      <% end %>
+    </tbody>
+  </table>
+</div>  

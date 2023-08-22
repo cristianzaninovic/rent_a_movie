@@ -1,37 +1,25 @@
-<%= form_with(model: movie) do |form| %>
-  <% if movie.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+<%= simple_form_for(movie) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :protagonist %>
+    <%= f.input :synopsis %>
+    <%= f.input :director %>
+    <%= f.input :year %>      
+  </div>
 
-      <ul>
-        <% movie.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <h3 class="text-xl mt-4">Clients</h3>
+  <div class="my-2" data-controller="nested-rondo">
+    <div data-nested-rondo-target="fieldContain">
+      <%= f.simple_fields_for :clients do |f| %>
+        <%= render "client_fields", f: f %>
+      <% end %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :synopsis, style: "display: block" %>
-    <%= form.text_field :synopsis %>
-  </div>
-
-  <div>
-    <%= form.label :director, style: "display: block" %>
-    <%= form.text_field :director %>
-  </div>
-
-  <div>
-    <%= form.label :year, style: "display: block" %>
-    <%= form.number_field :year %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <div class="links">
+      <%= link_to_add_association "Add Client", f , :clients, class: 'btn btn-info'  %>
+    </div>
+  </div> 
+  <div class="form-actions mt-4">
+    <%= f.button :submit , class: 'btn btn-success' %>
   </div>
 <% end %>

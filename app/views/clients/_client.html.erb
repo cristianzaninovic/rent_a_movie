@@ -18,5 +18,10 @@
     <strong>Email:</strong>
     <%= client.email %>
   </p>
-
+  <% unless client.movie.nil? %>
+    <p>
+    <strong>Movie:</strong>
+    <%= client.movie.title %>
+  </p>
+  <% end %>
 </div>

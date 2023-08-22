@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @movie.clients.build
   end
 
   # GET /movies/1/edit
@@ -60,11 +61,11 @@ class MoviesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
-      @movie = Movie.find(params[:id])
+      @movie = Movie.find(params[:id])      
     end
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :synopsis, :director, :year)
+      params.require(:movie).permit(:title, :synopsis, :director, :protagonist, :year, clients_attributes: [:id, :name, :movie_id, :_destroy])
     end
 end

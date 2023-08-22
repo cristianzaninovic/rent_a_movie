@@ -1,0 +1,10 @@
+<tr id="<%= dom_id client %>">
+  <td><%= client.name %></td>
+  <td><%= client.email %></td>
+  <td><%= client.movie.nil? ? '' : client.movie.title %></td>
+  <td class="text-center">
+    <%= link_to "Show", client_path(client), class: 'btn btn-info'%>
+    <%= link_to "Edit", edit_client_path(client), class: 'btn btn-success'%>
+    <%= link_to "Delete", @client, method: :destroy, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+  </td>
+</tr>

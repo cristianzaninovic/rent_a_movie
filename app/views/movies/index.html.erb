@@ -1,14 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Movies</h1>
-
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
+<%= link_to "New movie", new_movie_path, class:"btn btn-primary" %>
+<div id="movies" class="card-deck">
+  <div class="row row-cols-1 row-cols-md-4 g-4">    
+    <% @movies.each do |movie| %>      
+      <%= render partial: "movie_index", locals: { movie: movie } %>
+    <% end %>    
+  </div>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
