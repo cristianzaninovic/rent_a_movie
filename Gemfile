@@ -55,7 +55,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 
 # Use jquery-ui for pretty UI
-gem 'jquery-ui-rails'
+# gem 'jquery-ui-rails'
 
 # Gem Faker If you get a uninitialized constant Faker::[some_class] error, your version of the gem is behind main.
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
