@@ -1,0 +1,9 @@
+<%= simple_form_for @movie, wrapper: false do |f| %>
+<%= f.simple_fields_for :clients, wrapper: false do |client_fields| %>      
+  <div class="nested-fields border border-warning rounded p-2 border-2 m-2">
+    <%= client_fields.input :id, collection: Client.all.map { |field| [field.name, field.id] }, include_blank: false, label: 'Select a client', prompt: "select a client..." %>    
+    <%= client_fields.hidden_field :_destroy %>  
+    <%= link_to "Remove", '#', class: 'remove-client' %>
+  </div>  
+<% end %>
+<% end %>

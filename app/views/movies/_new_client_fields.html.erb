@@ -1,0 +1,10 @@
+<%= simple_form_for @movie, wrapper: false do |f| %>
+<%= f.simple_fields_for :clients, child_index: "NEW_RECORD", wrapper: false do |client_fields| %>      
+  <div class="nested-fields border border-warning rounded p-2 border-2 m-2">
+    <%= client_fields.input :name %>
+    <%= client_fields.input :email %>
+    <%= client_fields.hidden_field :_destroy %>  
+    <%= link_to "Remove", '#', class: 'remove-client' %>
+  </div>  
+<% end %>
+<% end %>

@@ -1,5 +1,6 @@
 <%= simple_form_for(movie) do |f| %>
   <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :protagonist %>
@@ -8,17 +9,19 @@
     <%= f.input :year %>      
   </div>
 
-  <h3 class="text-xl mt-4">Clients</h3>
-  <div class="my-2" data-controller="nested-rondo">
-    <div data-nested-rondo-target="fieldContain">
-      <%= f.simple_fields_for :clients do |f| %>
-        <%= render "client_fields", f: f %>
+  <h2 class="text-xl mt-4">Clients</h2>
+  <div class="my-2" data-controller="client-fields">
+    <div class="clients-fields" data-client-fields-target="clientsFields">  
+      <%= f.simple_fields_for :clients do |client_fields| %>      
+        <%= render 'client_fields', f: client_fields %>      
       <% end %>
+    </div>    
+    <div class="links py-2">
+      <%= link_to 'Add New Client', '#', class: 'btn btn-info', data: { action: 'click->client-fields#loadNewClientFields' } %>
+      <%= link_to 'Add Existing Client', '#', class: 'btn btn-info', data: { action: 'click->client-fields#loadExistingClientFields' } %>
     </div>
-    <div class="links">
-      <%= link_to_add_association "Add Client", f , :clients, class: 'btn btn-info'  %>
-    </div>
-  </div> 
+  </div>
+
   <div class="form-actions mt-4">
     <%= f.button :submit , class: 'btn btn-success' %>
   </div>
